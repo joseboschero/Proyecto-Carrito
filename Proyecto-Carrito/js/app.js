@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-//borra un item del carrito y restamos el precio
+// Borra un item del carrito y restamos el precio
 const borrar = (e) => {
     if(e.target.classList.contains('eliminar-uno')){
         const cursos = carritoCursos.filter(curso => curso.id === e.target.id)
@@ -43,6 +43,7 @@ const borrar = (e) => {
     }
 }
 
+// Leemos el id de la card clickeada, y pusheamos el objeto con sus atributos dentro del array del carrito "carritoCursos" y creamos el HTML
 const leerId = (datosCurso, id) => {
     const curso = {
         imagen : datosCurso.children[0].getAttribute('src'),
@@ -68,11 +69,13 @@ const leerId = (datosCurso, id) => {
     crearHTML();
 }
 
+// Vaciamos el carrito
 const vaciarCarrito = () => {
     carrito.innerHTML = '';
     carritoCursos = [];
 }
 
+// Funcion para crear HTML dentro del carrito
 const crearHTML = () => {
       
     

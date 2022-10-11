@@ -4,6 +4,8 @@ const carrito = document.getElementById('tbody');
 
 const btnVaciar = document.getElementById('vaciar-carrito');
 
+//Listeners
+
 document.addEventListener('DOMContentLoaded', () => {
     
         const boton = document.querySelectorAll('.agregar-carrito');
@@ -26,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+//borra un item del carrito y restamos el precio
 const borrar = (e) => {
     if(e.target.classList.contains('eliminar-uno')){
-       
         const cursos = carritoCursos.filter(curso => curso.id === e.target.id)
         cursos[0].cantidad--;
         let nuevoPrecio = cursos[0].precio.split('$');
@@ -58,7 +60,7 @@ const leerId = (datosCurso, id) => {
         cursos[0].cantidad++;
         let nuevoPrecio = cursos[0].precio.split('$');
         let precioInt = parseInt(nuevoPrecio[1]);
-        cursos[0].precio = `$${precioInt + 15}`;
+        cursos[0].precio = `$${precioInt+=15}`;
     } else {
         carritoCursos = [...carritoCursos, curso];
     }
